@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :events do
     resources :tickets
   end
+
+  resources :venues, only: [:new, :create]
+  get '/yourevents', to: 'events#user_events'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

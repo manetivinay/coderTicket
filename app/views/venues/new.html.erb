@@ -1,0 +1,16 @@
+<div class="container" style="margin-top: 100px">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title", align="center">Create A Venue for Event</h3>
+    </div>
+    <div class="container">
+      <%= render 'shared/errors', obj: @venue %>
+      <%= simple_form_for @venue do |f| %>
+          <%= f.input :name %>
+          <%= f.input :full_address %>
+          <%= f.association :region, include_blank: false %>
+          <%= f.submit 'Create Venue', class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
