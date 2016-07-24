@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new, :create]
+  delete '/logout' => 'sessions#destroy'
+  resources :users
   root 'events#index'
+
+  resources :events, except: :destroy do
+    resource :ticket_types
+  end
 
   resources :events do
     resources :tickets

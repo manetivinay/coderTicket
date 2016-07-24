@@ -1,0 +1,35 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" href="<%= root_path %>">Coder Ticket</a>
+  <ul class="nav navbar-nav">
+    <% if current_user %>
+        <li class="nav-item">
+          <%= link_to "Your Events", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create Event", new_event_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create Venue", '#', class: "nav-link" %>
+        </li>
+    <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_path, :class => 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log In', new_session_path, :class => 'nav-link' %>
+        </li>
+    <% end %>
+  </ul>
+  <% if current_user %>
+      <ul class="nav navbar-nav pull-right">
+        <li class="nav-item">
+          <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '#', class: "nav-link" do %>
+              <%= current_user.name %>
+          <% end %>
+        </li>
+  <% end %>
+  </ul>
+</nav>

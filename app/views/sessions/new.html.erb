@@ -1,0 +1,20 @@
+<h2 align="center" style="margin-top: 100px">Log In</h2>
+<%= form_tag sessions_path do %>
+    <div class="container">
+      <div class="row">
+        <div class="row col-md-12" style="border:1px solid black; padding: 30px 30px 30px 30px;">
+          <div class="input-field ">
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+          </div>
+          <div class="input-field ">
+            <%= label_tag :Password %>
+            <%= password_field_tag :password %>
+          </div>
+          <div>
+            <%= submit_tag 'Log In', class: 'btn btn-secondary ' %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

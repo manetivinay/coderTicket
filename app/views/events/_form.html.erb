@@ -1,0 +1,12 @@
+<%= render 'shared/errors', obj: @event, name: 'event' %>
+<%= simple_form_for(@event) do |f| %>
+    <%= f.input :name, :style => 'margin-top: 10px' %>
+    <%= f.input :extended_html_description, label: 'Description' %>
+    <%= f.input :hero_image_url, label: 'Image' %>
+    <%= f.input :starts_at %>
+    <%= f.input :ends_at %>
+    <%= f.association :venue, include_blank: false %>
+    <%= f.association :category, include_blank: false %>
+
+    <%= f.button :submit, :class => 'btn btn-secondary', :style => 'margin-bottom: 10px' %>
+<% end %>
